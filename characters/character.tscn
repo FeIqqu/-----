@@ -1,13 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgl3gk845401d"]
+[gd_scene load_steps=2 format=3 uid="uid://1dmy4o6rq5cd"]
 
 [ext_resource type="Script" path="res://characters/character.gd" id="1_romfo"]
-[ext_resource type="Script" path="res://addons/godot_state_charts/state_chart.gd" id="2_pvbq6"]
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_romfo")
-
-[node name="StateChart" type="Node" parent="."]
-script = ExtResource("2_pvbq6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
