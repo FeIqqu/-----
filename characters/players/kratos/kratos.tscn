@@ -643,7 +643,7 @@ shape = SubResource("CircleShape2D_4fplh")
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_5miur")
 animation = &"afk"
-frame = 3
+frame = 4
 
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {
