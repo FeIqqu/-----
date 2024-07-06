@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://d3b2w2ov2hq4v"]
+
+[ext_resource type="Script" path="res://side_doors.gd" id="1_67464"]
+[ext_resource type="Texture2D" uid="uid://gtrccbcpljuw" path="res://assets/environment/tiles_sewers.png" id="2_mqr8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgsnr"]
+size = Vector2(6, 7.4617)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km2ap"]
+atlas = ExtResource("2_mqr8y")
+region = Rect2(48, 224, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j6x0"]
+atlas = ExtResource("2_mqr8y")
+region = Rect2(48, 240, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsf1b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km2ap")
+}],
+"loop": true,
+"name": &"side_door_closed1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j6x0")
+}],
+"loop": true,
+"name": &"side_door_open1",
+"speed": 5.0
+}]
+
+[node name="side_doors" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_67464")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+scale = Vector2(1, 1.74223)
+shape = SubResource("RectangleShape2D_qgsnr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1, 1.75)
+sprite_frames = SubResource("SpriteFrames_hsf1b")
+animation = &"side_door_closed1"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

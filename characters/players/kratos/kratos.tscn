@@ -583,7 +583,7 @@ transitions = ["Start", "afk", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-153, -9)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_n58xq"]
-graph_offset = Vector2(-651.678, 111.885)
+graph_offset = Vector2(-661.017, 164.865)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_v8mkp")
 nodes/StateMachine/position = Vector2(-220, 140)
 nodes/output/position = Vector2(120, 160)
@@ -643,7 +643,7 @@ shape = SubResource("CircleShape2D_4fplh")
 [node name="AnimatedSprite2D" parent="." index="2"]
 sprite_frames = SubResource("SpriteFrames_5miur")
 animation = &"afk"
-frame = 4
+frame = 1
 
 [node name="AnimationPlayer" parent="." index="3"]
 libraries = {
@@ -657,7 +657,7 @@ parameters/StateMachine/conditions/afk = false
 parameters/StateMachine/conditions/idle = false
 parameters/StateMachine/conditions/moving = false
 parameters/StateMachine/idle/blend_position = Vector2(-0.9968, 0.00582004)
-parameters/StateMachine/move/blend_position = Vector2(0.992, 0.0174602)
+parameters/StateMachine/move/blend_position = Vector2(-0.00959998, 0.00582004)
 
 [connection signal="state_entered" from="StateChart/Root/Afk" to="." method="_on_afk_state_entered"]
 [connection signal="state_physics_processing" from="StateChart/Root/Afk" to="." method="_on_afk_state_physics_processing"]
