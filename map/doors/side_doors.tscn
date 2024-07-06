@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3b2w2ov2hq4v"]
 
-[ext_resource type="Script" path="res://side_doors.gd" id="1_67464"]
+[ext_resource type="Script" path="res://map/doors/side_doors.gd" id="1_djx64"]
 [ext_resource type="Texture2D" uid="uid://gtrccbcpljuw" path="res://assets/environment/tiles_sewers.png" id="2_mqr8y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgsnr"]
@@ -36,7 +36,7 @@ animations = [{
 [node name="side_doors" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_67464")
+script = ExtResource("1_djx64")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.5)
