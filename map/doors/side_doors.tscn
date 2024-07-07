@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://map/doors/side_doors.gd" id="1_djx64"]
 [ext_resource type="Texture2D" uid="uid://gtrccbcpljuw" path="res://assets/environment/tiles_sewers.png" id="2_mqr8y"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgsnr"]
-size = Vector2(6, 7.4617)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_km2ap"]
 atlas = ExtResource("2_mqr8y")
 region = Rect2(48, 224, 16, 16)
@@ -33,21 +30,24 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgsnr"]
+size = Vector2(6, 8.60966)
+
 [node name="side_doors" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_djx64")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.5)
-scale = Vector2(1, 1.74223)
-shape = SubResource("RectangleShape2D_qgsnr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(1, 1.75)
 sprite_frames = SubResource("SpriteFrames_hsf1b")
 animation = &"side_door_closed1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7.5)
+scale = Vector2(1, 1.74223)
+shape = SubResource("RectangleShape2D_qgsnr")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

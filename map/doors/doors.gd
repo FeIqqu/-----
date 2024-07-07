@@ -1,7 +1,7 @@
 extends Area2D
 
 
-func _ready():
+func _ready()->void:
 	$AnimatedSprite2D.play("front_door_closed1")
 	$AnimatedSprite2D2.play("front_door_closed2")
 	
