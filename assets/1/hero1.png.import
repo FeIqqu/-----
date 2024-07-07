@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdf5vmniburmd"
-path="res://.godot/imported/kratos_picture.png-3bef32e033437ee9dfe40f1278fcba40.ctex"
+path="res://.godot/imported/hero1.png-ae9fc8081310d4a1b5b0dd88c214d439.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/1/kratos_picture.png"
-dest_files=["res://.godot/imported/kratos_picture.png-3bef32e033437ee9dfe40f1278fcba40.ctex"]
+source_file="res://assets/1/hero1.png"
+dest_files=["res://.godot/imported/hero1.png-ae9fc8081310d4a1b5b0dd88c214d439.ctex"]
 
 [params]
 
