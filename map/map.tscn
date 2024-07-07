@@ -1,9 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dubdcft1mj4nc"]
+[gd_scene load_steps=12 format=3 uid="uid://dubdcft1mj4nc"]
 
 [ext_resource type="Texture2D" uid="uid://gtrccbcpljuw" path="res://assets/environment/tiles_sewers.png" id="1_q88ie"]
 [ext_resource type="Texture2D" uid="uid://cbwcyftwxhxoi" path="res://assets/environment/water0.png" id="2_x5dkp"]
 [ext_resource type="PackedScene" uid="uid://dt8bg0ipkmvfv" path="res://map/traps.tscn" id="3_meq1d"]
-[ext_resource type="PackedScene" uid="uid://1yvp2oco3xk3" path="res://characters/players/kratos/kratos.tscn" id="3_uxyck"]
 [ext_resource type="PackedScene" uid="uid://m8aj8ty11ggl" path="res://map/doors/doors.tscn" id="4_oe0vq"]
 [ext_resource type="PackedScene" uid="uid://d3b2w2ov2hq4v" path="res://map/doors/side_doors.tscn" id="5_46awj"]
 
@@ -807,34 +806,3 @@ layer_1/tile_data = PackedInt32Array(327690, 131072, 805306377, 65545, 131072, 5
 layer_2/name = "objects"
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(786446, 3, 65536, 786447, 3, 65536, 720911, 3, 65536, 720910, 3, 65536, 393231, 6, 131072, 327681, 7, 131072, 524289, 7, 131072, 524298, 7, 131072, 851998, 7, 131072, 1310761, 7, 131072, 1703977, 7, 131072, 1572894, 7, 131072, 1245194, 7, 131072, 65546, 7, 131072)
-
-[node name="Kratos" parent="." instance=ExtResource("3_uxyck")]
-position = Vector2(91, 177)
-
-[node name="Camera2D" type="Camera2D" parent="Kratos"]
-position = Vector2(1, 0)
-
-[connection signal="body_entered" from="TileMap/side_doors" to="TileMap/side_doors" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/side_doors" to="TileMap/side_doors" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57528" to="TileMap/@Area2D@57528" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57528" to="TileMap/@Area2D@57528" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57529" to="TileMap/@Area2D@57529" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57529" to="TileMap/@Area2D@57529" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57530" to="TileMap/@Area2D@57530" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57530" to="TileMap/@Area2D@57530" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57531" to="TileMap/@Area2D@57531" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57531" to="TileMap/@Area2D@57531" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57532" to="TileMap/@Area2D@57532" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57532" to="TileMap/@Area2D@57532" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57533" to="TileMap/@Area2D@57533" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57533" to="TileMap/@Area2D@57533" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57534" to="TileMap/@Area2D@57534" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57534" to="TileMap/@Area2D@57534" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/@Area2D@57535" to="TileMap/@Area2D@57535" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/@Area2D@57535" to="TileMap/@Area2D@57535" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/front_door" to="TileMap/front_door" method="_on_body_entered"]
-[connection signal="body_exited" from="TileMap/front_door" to="TileMap/front_door" method="_on_body_exited"]
-[connection signal="body_entered" from="TileMap/traps" to="TileMap/traps" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@57536" to="TileMap/@Area2D@57536" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@57537" to="TileMap/@Area2D@57537" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@57538" to="TileMap/@Area2D@57538" method="_on_body_entered"]
