@@ -34,8 +34,8 @@ animations = [{
 size = Vector2(6, 8.60966)
 
 [node name="side_doors" type="Area2D"]
-collision_layer = 0
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_djx64")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

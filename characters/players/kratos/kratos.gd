@@ -13,23 +13,23 @@ func take_damage(damage: int):
 func _physics_process(delta):
 	super(delta)
 	if direction != Vector2.ZERO:
-		$AnimationTree.set("parameters/movement/idle/blend_position", direction)
-		$AnimationTree.set("parameters/movement/move/blend_position", direction)
+		$AnimationTree.set("parameters/idle/blend_position", direction)
+		$AnimationTree.set("parameters/move/blend_position", direction)
 
 	if Input.is_action_just_pressed("debug"):
 		take_damage(20)
 
 
 func _on_afk_state_entered():
-	$AnimationTree["parameters/movement/playback"].travel("afk")
+	$AnimationTree.set("parameters/movement/transition_request", "afk")
 
 
 func _on_idle_state_entered():
-	$AnimationTree["parameters/movement/playback"].travel("idle")
+	$AnimationTree.set("parameters/movement/transition_request", "idle")
 
 
 func _on_move_state_entered():
-	$AnimationTree["parameters/movement/playback"].travel("move")
+	$AnimationTree.set("parameters/movement/transition_request", "move")
 
 
 func _on_hurt_state_entered():
@@ -62,6 +62,3 @@ func _on_hurt_state_physics_processing(_delta):
 		$StateChart.send_event("afk")
 	else:
 		$StateChart.send_event("moving")
-
-
-

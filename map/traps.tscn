@@ -60,6 +60,7 @@ color_ramp = SubResource("GradientTexture1D_yjpvg")
 
 [node name="traps" type="Area2D"]
 collision_mask = 2
+monitorable = false
 script = ExtResource("1_duk0t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -77,6 +78,7 @@ process_material = SubResource("ParticleProcessMaterial_73f6j")
 lifetime = 0.35
 one_shot = true
 explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
