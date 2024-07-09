@@ -1,64 +1,24 @@
-@icon("res://assets/1/kratos_picture.png")
+@icon("res://assets/characters/players/kratos/kratos_picture.png")
 extends Player
 class_name Kratos
-
-func take_damage(damage: int):
-	super(damage)
-	$HealthBar.value = hp
-	if hp <= 0:
-		$StateChart.send_event("dead")
-	else:
-		$StateChart.send_event("hurt")
 
 func _physics_process(delta):
 	super(delta)
 	if direction != Vector2.ZERO:
+		update_blend_position()
+		
+	#if Input.is_action_just_pressed("debug"):
+		#take_damage(1)
+
+func update_blend_position() -> void:
 		$AnimationTree.set("parameters/idle/blend_position", direction)
 		$AnimationTree.set("parameters/move/blend_position", direction)
+		$AnimationTree.set("parameters/attack/blend_position", direction)
 
-	if Input.is_action_just_pressed("debug"):
-		take_damage(20)
-
-
-func _on_afk_state_entered():
-	$AnimationTree.set("parameters/movement/transition_request", "afk")
-
-
-func _on_idle_state_entered():
-	$AnimationTree.set("parameters/movement/transition_request", "idle")
-
-
-func _on_move_state_entered():
-	$AnimationTree.set("parameters/movement/transition_request", "move")
-
-
-func _on_hurt_state_entered():
-	$HitFlashAnimationPlayer.play("hurt")
-
-
-func _on_dead_state_entered():
-	queue_free()
-
-
-func _on_afk_state_physics_processing(_delta):
-	if direction != Vector2.ZERO:
-		$StateChart.send_event("moving")
-
-
-func _on_idle_state_physics_processing(_delta):
-	if direction != Vector2.ZERO:
-		$StateChart.send_event("moving")
-
-
-func _on_move_state_physics_processing(_delta):
-	if direction == Vector2.ZERO:
-		$StateChart.send_event("idle")
-		$StateChart.send_event("afk")
-
-
-func _on_hurt_state_physics_processing(_delta):
-	if direction == Vector2.ZERO:
-		$StateChart.send_event("idle")
-		$StateChart.send_event("afk")
+func take_damage(damage: int) -> void:
+	super(damage)
+	if hp <= 0:
+		$StateChart.send_event("dead")
 	else:
-		$StateChart.send_event("moving")
+		$StateChart.send_event("hurt")
+	$HealthBar.value = hp
