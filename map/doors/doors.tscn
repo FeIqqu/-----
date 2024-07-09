@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://m8aj8ty11ggl"]
+[gd_scene load_steps=13 format=3 uid="uid://m8aj8ty11ggl"]
 
 [ext_resource type="Script" path="res://map/doors/doors.gd" id="1_2oawg"]
 [ext_resource type="Texture2D" uid="uid://gtrccbcpljuw" path="res://assets/environment/tiles_sewers.png" id="2_3aqa3"]
@@ -60,6 +60,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qps0r"]
+polygon = PackedVector2Array(-6, -14, -6, 2, -8, 2, -8, -14)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d8rfq"]
+polygon = PackedVector2Array(6, -14, 6, 2, 8, 2, 8, -14)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d7cm2"]
+polygon = PackedVector2Array(-6, -14, 6, -14, 6, -14, -6, -14)
+
 [node name="front_door" type="Area2D"]
 collision_mask = 2
 monitorable = false
@@ -79,6 +88,15 @@ animation = &"front_door_closed1"
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_lblvg")
 animation = &"front_door_closed2"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_qps0r")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_d8rfq")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_d7cm2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

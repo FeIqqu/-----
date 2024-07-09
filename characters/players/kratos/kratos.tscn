@@ -1442,7 +1442,6 @@ disabled = true
 material = SubResource("ShaderMaterial_ge0wx")
 sprite_frames = SubResource("SpriteFrames_mevnq")
 animation = &"afk"
-frame = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

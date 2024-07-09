@@ -6,7 +6,9 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Node2D) -> void:
 	$AnimatedSprite2D.play("side_door_open1")
+	$LightOccluder2D.visible = false
 
 
 func _on_body_exited(_body: Node2D) -> void:
 	$AnimatedSprite2D.play("side_door_closed1")
+	$LightOccluder2D.visible = true
