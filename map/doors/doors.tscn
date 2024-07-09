@@ -61,10 +61,10 @@ animations = [{
 }]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qps0r"]
-polygon = PackedVector2Array(-6, -14, -6, 2, -8, 2, -8, -14)
+polygon = PackedVector2Array(-6, -14, -6, -14, -8, -14, -8, -14)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d8rfq"]
-polygon = PackedVector2Array(6, -14, 6, 2, 8, 2, 8, -14)
+polygon = PackedVector2Array(6, -14, 6, -14, 8, -14, 8, -14)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_d7cm2"]
 polygon = PackedVector2Array(-6, -14, 6, -14, 6, -14, -6, -14)
